@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class AskingQuestions {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("What is your math marks? ");
+        int age = input.nextInt();
+        
+        System.out.print("What is your ESL marks? ");
+        String height = input.next();
+        
+        System.out.print("What is your science marks? ");
+        double weight = input.nextDouble();
+        
+        System.out.println("So you got " + math marks + " mark, " + ESL mark + " mark and " + science marks + " mark.");
+    }
+}
+
