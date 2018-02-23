@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class AskingQuestions {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("What is your name? ");
+        int name = input.nextInt();
+        
+        System.out.print("SO your name is " + name + " How old are you?");
+        String age = input.next();
+        
+        System.out.print("SO you are old " + age " How much do you make, " + name?);
+        double hours = input.nextDouble();
+        
+        System.out.println("So you are " + name + age + "years old" + hours + "per day");
+    } 
+}
+ 
