@@ -5,15 +5,15 @@ public class AskingQuestions {
         Scanner input = new Scanner(System.in);
         
         System.out.print("What is your math marks? ");
-        int age = input.nextInt();
+        int marks = input.nextInt();
         
         System.out.print("What is your ESL marks? ");
-        String height = input.next();
+        String marks = input.next();
         
         System.out.print("What is your science marks? ");
-        double weight = input.nextDouble();
+        double marks = input.nextDouble();
         
-        System.out.println("So you got " + math marks + " mark, " + ESL mark + " mark and " + science marks + " mark.");
-    }
+        System.out.println("So you got " + math marks + " mark, " + ESL mark + " mark and " + science marks + " mark.");u
+    } 
 }
 
