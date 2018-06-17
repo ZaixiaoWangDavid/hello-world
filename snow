@@ -48,3 +48,79 @@ void setup() {
 void draw() {
   background(#87CEEB);
 }
+
+ public void showUI()  {
+    Jframe jf = new JFrame();
+    jf.setSize(1000, 1000);
+    jf.setTitle("Fivechess");
+    jf.setDefaultCloseOperation(3);
+    jf.add(this);
+    this.setBackground(Color.Orange);
+    jf.setVisible(true);
+    Graphics g = this.getGraphics();
+    GameMouse gm = new GameMouse();
+    gm.setG(g);
+    this.addMouselistener(gm);
+  }
+  
+  
+}
+
+public class GameUI extends JPanel implements Config {
+  
+  public static void main(String[] args) {
+    GameUI ui = new GameUI90;
+    ui.showUI90;
+  }
+  
+}
+
+public interface Config {
+  public static final int X = 300;
+  public static final int Y = 300;
+  public static final int LINE = 40;
+  public static final int SIZE = 40;
+  public static final int[] [] chessArray = new int[LINE] [LINE];
+}
+
+
+
+public interface Config {
+  public static final int X = 60;
+  public static final int Y = 50;
+  public static final int LINE = 15;
+  public static final int SIZE = 40;
+  public static final int[] [] chessArray = new int[LINE] [SIZE];
+}
+
+public class GameUI extends JPanel implements Config {
+  
+  public static void main(String[] args) {
+    GameUI ui = new GameUI();
+    ui.showUI();
+  }
+  public void showUI()  {
+    JFrame frame = new JFrame();
+    frame.setSize(1000, 1000);
+    frame.setTitle("Fivechess");
+    frame.setDefaultCloseOperation(3);
+    frame.add(this);
+    this.setBackground(Color.Orange);
+    frame.setVisible(true);
+  public void paintComponent(Graphics g)  
+    Graphics g = this.getGraphics();
+    GameMouse gm = new GameMouse();
+    gm.setG(g);
+    this.addMouselistener(gm);
+  }
+  
+  public void paint(Graphics g)  {
+    super.paint(g);
+    for (int i = 0; i < LINE; i ++) {
+       g.drawLine(X, Y + 1 * SIZE, X + (LINE - 1) * SIZE, Y + i * SIZE);
+       g.drawLine(X + i * SIZE, Y, X + i * SIZE, Y + (LINE - 1) * SIZE);
+  }
+}
+
+}
+
