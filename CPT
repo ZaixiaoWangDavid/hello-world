@@ -1,0 +1,78 @@
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
+ 
+public class Guessinggame {
+ 
+    
+    public static void main(String[] args) {
+        Icon icon = null;
+        boolean bl = false;
+        int put = 0;
+        int c = (int) (((Math.random())*100)+1); 
+        System.out.println("Your random number is:"+c);  
+     
+        String str1  = (String) JOptionPane.showInputDialog(null,"Please enter the number you guess(1-100)\n","Guessing game",JOptionPane.PLAIN_MESSAGE,icon,null,"Please enter here"); 
+         
+        if(str1==null){
+            JOptionPane.showMessageDialog(null, "You cancel this game."); 
+        }else{
+            bl = num(str1);    
+            if(true==bl){      
+            System.out.println("This number that you enter is:"+str1); 
+             put = Integer.valueOf(str1);   
+         
+            for(int i = 3;i > 0;i--){   
+                 if(put==c){
+                    JOptionPane.showMessageDialog(null, "You win,the answer is:"+c+"."); 
+                    break;
+                 }else if(put>c){  
+                     str1  = (String) JOptionPane.showInputDialog(null,"The number you guess is bigger than the right answer.You still have "+i+" chance.Please guess again:\n","Guessing game",JOptionPane.PLAIN_MESSAGE,icon,null,"Please enter here"); 
+                     if(str1==null){
+                         JOptionPane.showMessageDialog(null, "You cancel this game"); 
+                         break;
+                        }else{
+                             bl =num(str1);
+                               if(true==bl){
+                                  put = Integer.valueOf(str1);
+                                }else{
+                                 JOptionPane.showMessageDialog(null, "The answer is wrong , please guess again."); 
+                                }
+                        }
+                 }else if(put<c){ 
+                    str1  = (String) JOptionPane.showInputDialog(null,"The number you guess is smaller than the right answer. You still have"+i+"chance.Please guess again：\n","Guessing game",JOptionPane.PLAIN_MESSAGE,icon,null,"Pleas enter here"); 
+                     if(str1==null){
+                         JOptionPane.showMessageDialog(null, "You cancel this game"); 
+                         break;
+                        }else{
+                            bl =num(str1);
+                           if(true==bl){
+                             put = Integer.valueOf(str1);
+                           }else{
+                              JOptionPane.showMessageDialog(null, "Your answer is wrong, please enter again"); 
+                            }
+                      }
+                }
+            }
+         
+             
+        }else if(bl==false){  
+            JOptionPane.showMessageDialog(null, "Please enter right number next time."); 
+        }
+        if(true==bl && c!=put){  
+                 JOptionPane.showMessageDialog(null, "this number is："+c+".");  
+         }
+             
+      } 
+          
+    }
+     
+    public  static boolean num(String value){ 
+       try {
+        Integer.parseInt(value);
+        return true;
+        } catch (Exception e) {
+            return false;
+        }
+        
+   }
+}
